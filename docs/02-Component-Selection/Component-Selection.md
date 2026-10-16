@@ -111,18 +111,79 @@ The final regulator choice will depend on the total current required by the 5V e
 
 ## 4. Power Supply Selection
 
-*Table 4: Power Supply Comparison*
+*Table 4: DC Power Supply Comparison*
+
+The GripRx Motor Board requires a DC power supply capable of powering the motor driver, DC gear motor, and 5V regulation circuitry. The selected DFRobot FIT0492-A motor is rated for 12V, while the team's original power supply proposal was a 9V, 3A adapter. Three power supply options were compared based on voltage compatibility, current capacity, power rating, cost, and ease of integration.
 
 | Solution | Pros | Cons |
 |---|---|---|
-| Option 1: To be researched | Pending | Pending |
-| Option 2: To be researched | Pending | Pending |
-| Option 3: To be researched | Pending | Pending |
+| <img src="supply1.jpeg" width="150"><br> **Option 1: BestCH 9V 3A AC/DC Adapter** <br> **Price:** $16.99 <br> **Output voltage:** 9V DC <br> **Maximum output current:** 3A <br> **Maximum output power:** 27W <br> **Type:** AC/DC wall adapter <br> **Connector:** Verify exact barrel dimensions and polarity <br> [Product Search](https://www.amazon.com/s?k=BestCH+9V+3A+power+adapter) | - Matches the team's original power supply proposal <br> - Provides a nominal 27W output capacity <br> - External adapter avoids placing AC mains circuitry on the PCB <br> - Simple connection if the barrel connector is compatible | - Output voltage is below the motor's 12V rating <br> - Motor may operate at reduced speed and torque <br> - Exact adapter model and connector must be verified <br> - May require replacement if 12V motor performance is needed |
+| <img src="supply2.jpeg" width="150"><br> **Option 2: Adafruit 12V 5A Switching Power Supply** <br> **Listed price:** $24.95 <br> **Output voltage:** 12V DC <br> **Maximum output current:** 5A <br> **Maximum output power:** 60W <br> **AC input:** 110–220V <br> **Connector:** 5.5mm outer / 2.1mm inner barrel plug <br> [Product Link](https://www.adafruit.com/product/352) | - Matches the motor's rated 12V supply <br> - Provides additional current capacity for motor startup and other circuitry <br> - Fixed output voltage avoids adjustment errors <br> - External switching supply <br> - Documented product specifications and connector dimensions | - Higher listed price <br> - Larger supply than may be necessary <br> - Connector and polarity must match the board <br> - Additional current capacity does not replace motor current limiting <br> - The 5V regulator must be checked for heat dissipation |
+| <img src="supply3.jpeg" width="150"><br> **Option 3: Adafruit Adjustable 3–12V 5A Power Supply** <br> **Listed price:** $17.50 <br> **Output voltage:** Adjustable from 3V to 12V DC <br> **Maximum rated output current:** 5A <br> **Maximum rated output power at 12V:** 60W <br> **AC input:** 100–240V <br> **Connector:** 5.5mm / 2.1mm barrel plug <br> [Product Link](https://www.adafruit.com/product/4880) | - Can be adjusted to the motor's rated 12V <br> - Useful for testing at different motor supply voltages <br> - Provides additional current capacity <br> - Lower listed price than Option 2 <br> - Suitable for laboratory development | - Adjustable voltage introduces risk of incorrect settings <br> - Voltage should be measured before connecting the board <br> - Less convenient than a fixed-voltage supply for a final product <br> - Connector and polarity must be checked <br> - Motor current regulation remains necessary |
 
-**Choice:** Pending component comparison.
+**Preliminary Choice:** Option 2 – Adafruit 12V 5A Switching Power Supply.
 
-**Rationale:** To be completed.
+**Rationale:** The Adafruit 12V 5A switching power supply is the preferred preliminary option because its regulated 12V output matches the rated voltage of the selected DFRobot FIT0492-A DC gear motor. Its maximum current rating of 5A also provides headroom above the motor's specified 2.19A stall current.
+
+The team's originally proposed BestCH 9V 3A adapter could operate the motor below its rated voltage, but motor speed and available torque may be reduced. Since the GripRx mechanism requires reliable gripping force, a 12V supply is a more appropriate starting point.
+
+The adjustable Adafruit supply is also a useful alternative, particularly for testing. However, a fixed 12V output is preferable for the final design because it reduces the possibility of incorrect voltage adjustment.
+
+The maximum electrical output power can be estimated using:
+
+P = V x I
+
+For the original 9V 3A adapter:
+
+P = 9V x 3A = 27W
+
+For the proposed 12V 5A adapter:
+
+P = 12V x 5A = 60W
+
+These calculations represent the maximum rated supply outputs, not the actual power consumed by the GripRx Motor Board. The circuit draws current according to its load.
+
+Before finalizing the power supply, the team must verify the total current requirement, DC connector dimensions, polarity, motor-driver current regulation, and the thermal performance of the 5V regulator. A higher-current power supply does not automatically protect the motor or driver from excessive current.
+
+**Sources:**
+- [BestCH 9V 3A Adapter Search](https://www.amazon.com/s?k=BestCH+9V+3A+power+adapter)
+- [Adafruit 12V 5A Switching Power Supply](https://www.adafruit.com/product/352)
+- [Adafruit Adjustable 3–12V 5A Power Supply](https://www.adafruit.com/product/4880)
+- [Adafruit Power Supply Guide](https://learn.adafruit.com/power-supplies)
 
 ## Final Component Selection Summary
 
-This section will summarize the selected components after completing the comparisons.
+After comparing three alternatives for each major component, the following components were identified as the preliminary selections for the GripRx Motor Board. The selections were based on electrical specifications, compatibility, cost, functionality, and suitability for the proposed gripping mechanism.
+
+*Table 5: Final Component Selection Summary*
+
+| Component | Preliminary Selection | Key Specifications | Reason for Selection |
+|---|---|---|---|
+| DC Gear Motor | **DFRobot FIT0492-A** | 12V DC; approximately 2.19A stall current | Provides geared motor operation suitable for the proposed gripping mechanism. Final suitability depends on the required gripping torque and speed. |
+| H-Bridge Motor Driver | **Texas Instruments DRV8251ADDAR** | 4.5V minimum supply; 4.1A peak output current | Supports bidirectional motor control, PWM operation, and integrated current sensing and regulation. |
+| 5V Voltage Regulator | **STMicroelectronics L7805ABV-DG** | Fixed 5V output; 1.5A rated output current | Provides a simple method of generating a regulated 5V supply and is already included in the team's preliminary design. |
+| DC Power Supply | **Adafruit 12V 5A Switching Power Supply** | 12V DC; 5A maximum output current; 60W maximum output power | Matches the motor's rated voltage and provides current capacity for the motor and supporting electronics. |
+
+### Overall Design Considerations
+
+The selected components provide a preliminary electrical configuration for the GripRx Motor Board. The 12V power supply will provide power to the motor driver and motor, while the 5V voltage regulator will provide regulated power for the appropriate low-voltage electronics.
+
+Several design considerations must be addressed before finalizing the selections:
+
+- **Motor Requirements:** The required gripping torque and operating speed must be determined to verify that the DFRobot FIT0492-A is appropriate for the mechanism.
+
+- **Motor Driver Compatibility:** The DRV8251ADDAR was selected as the preferred preliminary driver because of its current sensing and regulation capabilities. However, the team's original block diagram specifies the DRV8871DDAR. The team must approve any change and update the schematic, PCB design, and control connections accordingly.
+
+- **Current Protection:** The motor has a specified stall current of approximately 2.19A. The motor driver's current regulation, thermal performance, and safe operating limits must be verified. The driver's peak current rating does not represent its guaranteed continuous current capability.
+
+- **Voltage Regulation:** The L7805ABV-DG can generate the required 5V output, but its power dissipation must be evaluated. With a 12V input, a significant amount of heat may be generated depending on the load current. A switching regulator may be preferable if the 5V current requirement is high.
+
+- **Power Supply Compatibility:** The proposed 12V 5A adapter provides a more appropriate voltage for the selected motor than the team's original 9V 3A adapter. The final design must verify total current requirements, connector dimensions, polarity, and electrical protection.
+
+### Conclusion
+
+The DFRobot FIT0492-A motor, Texas Instruments DRV8251ADDAR motor driver, STMicroelectronics L7805ABV-DG voltage regulator, and Adafruit 12V 5A power supply form the recommended preliminary component combination for the GripRx Motor Board.
+
+These components were selected based on their expected electrical compatibility and functional advantages. However, the final selection remains subject to verification of gripping torque, motor current, thermal performance, power requirements, and team design approval.
+
+The comparisons provide a starting point for completing the schematic, PCB layout, and subsequent testing of the GripRx Motor Board.

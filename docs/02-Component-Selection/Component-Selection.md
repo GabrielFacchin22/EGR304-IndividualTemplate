@@ -20,7 +20,7 @@ The major components evaluated are:
 1. DC Gear Motor
 2. H-Bridge Motor Driver
 3. 5V Voltage Regulator
-4. 9V Power Supply
+4. DC Power Supply
 
 ## 1. DC Gear Motor Selection
 

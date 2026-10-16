@@ -1025,24 +1025,31 @@ The final motor selection will be confirmed after the mechanical design is compl
 </thead>
 <tbody>
 <tr>
-<td>Option 1: To be researched</td>
-<td>Pending</td>
-<td>Pending</td>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="driver1.jpeg" data-desc-position="bottom"><img src="driver1.jpeg" width="150"></a><br> <strong>Option 1: Texas Instruments DRV8871DDAR</strong> <br> <strong>Approximate price:</strong> $2.90 each <br> <strong>Supply voltage:</strong> 6.5–45V <br> <strong>Peak output current:</strong> 3.6A <br> <strong>Package:</strong> 8-pin HSOP <br> <a href="https://www.ti.com/product/DRV8871">Product Link</a></td>
+<td>- Supports bidirectional brushed DC motor control <br> - Supports PWM speed control <br> - Adjustable current regulation using an external resistor <br> - Integrated overcurrent and thermal protection <br> - Relatively simple two-input interface</td>
+<td>- Current limit must be configured correctly <br> - Thermal design limits continuous current <br> - Does not provide the same current feedback capabilities as Option 3 <br> - Current block diagram may need changes to the current-limit setting</td>
 </tr>
 <tr>
-<td>Option 2: To be researched</td>
-<td>Pending</td>
-<td>Pending</td>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="driver2.jpeg" data-desc-position="bottom"><img src="driver2.jpeg" width="150"></a><br> <strong>Option 2: Texas Instruments DRV8876PWPR</strong> <br> <strong>Approximate price:</strong> $1.95 each <br> <strong>Supply voltage:</strong> 4.5–37V <br> <strong>Peak output current:</strong> 3.5A <br> <strong>Package:</strong> 16-pin HTSSOP <br> <a href="https://www.ti.com/product/DRV8876">Product Link</a></td>
+<td>- Lowest estimated unit price <br> - Integrated current sensing and regulation <br> - Supports PWM motor control <br> - Compatible with 3.3V and 5V logic <br> - Integrated fault protection</td>
+<td>- More pins and control configurations <br> - Requires careful PCB layout and thermal design <br> - Additional configuration may increase circuit complexity <br> - Not a direct pin-compatible replacement for the DRV8871</td>
 </tr>
 <tr>
-<td>Option 3: To be researched</td>
-<td>Pending</td>
-<td>Pending</td>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="driver3.jpeg" data-desc-position="bottom"><img src="driver3.jpeg" width="150"></a><br> <strong>Option 3: Texas Instruments DRV8251ADDAR</strong> <br> <strong>Approximate price:</strong> $2.40 each <br> <strong>Minimum supply voltage:</strong> 4.5V <br> <strong>Absolute maximum supply voltage:</strong> 50V <br> <strong>Peak output current:</strong> 4.1A <br> <strong>Package:</strong> 8-pin HSOP <br> <a href="https://www.ti.com/product/DRV8251A">Product Link</a></td>
+<td>- Highest specified peak current among the options <br> - Integrated current sensing and regulation <br> - Current feedback may support stall detection <br> - Supports common microcontroller logic levels <br> - Integrated thermal and overcurrent protection <br> - Compact package</td>
+<td>- Requires configuration of current regulation <br> - Thermal performance must be verified <br> - Motor current must remain within safe operating limits <br> - Requires verification of the control interface</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Choice:</strong> Pending component comparison.</p>
-<p><strong>Rationale:</strong> To be completed.</p>
+<p><strong>Preliminary Choice:</strong> Option 3 – Texas Instruments DRV8251ADDAR.</p>
+<p><strong>Rationale:</strong> The DRV8251A is the preferred preliminary motor driver because it provides integrated current sensing, adjustable current regulation, and a peak output current rating of 4.1A. Its operating voltage range accommodates the proposed motor supply.</p>
+<p>Current regulation is particularly useful for the GripRx project because the motor may experience increased mechanical resistance while gripping an object. The integrated current sensing feature may also help detect motor loading or stall conditions.</p>
+<p>The DRV8871 remains a viable alternative and is already included in the team's preliminary block diagram. However, the DRV8251A offers additional current feedback functionality that may be beneficial during development.</p>
+<p>The final selection depends on the required gripping torque, expected motor current, thermal performance, and implementation of the motor control signals. The proposed 9V supply must also be reconsidered because the selected motor is rated for 12V. The block diagram and PCB design must be updated if the team changes from the DRV8871 to the DRV8251A.</p>
+<p><strong>Sources:</strong>
+- <a href="https://www.ti.com/product/DRV8871">Texas Instruments DRV8871 Product Information</a>
+- <a href="https://www.ti.com/product/DRV8876">Texas Instruments DRV8876 Product Information</a>
+- <a href="https://www.ti.com/product/DRV8251A">Texas Instruments DRV8251A Product Information</a></p>
 <h2 id="3-voltage-regulator-selection">3. Voltage Regulator Selection</h2>
 <p><em>Table 3: Voltage Regulator Comparison</em></p>
 <table>

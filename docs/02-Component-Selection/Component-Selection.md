@@ -72,17 +72,42 @@ The final selection depends on the required gripping torque, expected motor curr
 
 ## 3. Voltage Regulator Selection
 
-*Table 3: Voltage Regulator Comparison*
+*Table 3: 5V Voltage Regulator Comparison*
+
+The GripRx Motor Board requires a regulated 5V power supply for its control and interface electronics. A voltage regulator is needed to convert the main DC power supply voltage into a stable 5V output. Three regulators were compared based on output voltage, current capacity, efficiency, thermal performance, cost, and circuit complexity.
 
 | Solution | Pros | Cons |
 |---|---|---|
-| Option 1: To be researched | Pending | Pending |
-| Option 2: To be researched | Pending | Pending |
-| Option 3: To be researched | Pending | Pending |
+| <img src="regulator1.jpeg" width="150"><br> **Option 1: STMicroelectronics L7805ABV-DG** <br> **Example unit price:** $1.62 <br> **Output voltage:** 5V <br> **Maximum rated output current:** 1.5A <br> **Maximum input voltage:** 35V <br> **Type:** Linear regulator <br> **Package:** TO-220-3 <br> [Product Link](https://www.st.com/en/power-management/l78.html) <br> [Supplier Link](https://www.digikey.com/en/products/detail/stmicroelectronics/L7805ABV-DG/3945936) | - Simple circuit design <br> - Fixed 5V output <br> - Low switching noise because it is a linear regulator <br> - Integrated thermal and short-circuit protection <br> - Already included in the team's preliminary design <br> - Common TO-220 package | - Dissipates significant heat when input voltage is much higher than 5V <br> - May require a heatsink <br> - Lower efficiency than a switching regulator <br> - Output current capability is limited by thermal conditions |
+| <img src="regulator2.jpeg" width="150"><br> **Option 2: Texas Instruments LM7805CT/NOPB** <br> **Price:** $1.86 <br> **Output voltage:** 5V <br> **Maximum rated output current:** 1.5A <br> **Type:** Linear regulator <br> **Package:** TO-220-3 <br> [Product Link](https://www.ti.com/product/LM7800/part-details/LM7805CT/NOPB) <br> [Supplier Link](https://www.digikey.com/en/products/detail/texas-instruments/LM7805CT-NOPB/3901929) | - Simple fixed 5V regulation <br> - Integrated thermal and short-circuit protection <br> - Low switching noise <br> - Common three-terminal package <br> - Similar functionality to Option 1 | - Produces heat when stepping down from 9V or 12V <br> - May require additional cooling <br> - Lower efficiency than a buck regulator <br> - Offers limited advantages over the team's original selection |
+| <img src="regulator3.jpeg" width="150"><br> **Option 3: Texas Instruments LM2596S-5.0/NOPB** <br> **Example unit price:** $8.30 <br> **Output voltage:** 5V <br> **Rated output current:** 3A <br> **Input voltage:** Up to 40V; check datasheet for required headroom <br> **Type:** Buck switching regulator <br> **Switching frequency:** 150kHz <br> **Package:** TO-263 <br> [Product Link](https://www.ti.com/product/LM2596/part-details/LM2596S-5.0/NOPB) <br> [Supplier Link](https://www.digikey.com/en/products/detail/texas-instruments/LM2596S-5-0-NOPB/334842) | - More efficient than linear regulators for large voltage reductions <br> - Reduced power dissipation at moderate and high load currents <br> - Higher rated output current <br> - Integrated thermal and current-limit protection <br> - Suitable for generating 5V from a higher DC voltage | - Requires an external inductor, diode, and capacitors <br> - More complex PCB layout <br> - Produces switching noise <br> - Higher total circuit complexity and component count <br> - Must be laid out carefully to minimize electrical noise |
 
-**Choice:** Pending component comparison.
+**Preliminary Choice:** Option 1 – STMicroelectronics L7805ABV-DG.
 
-**Rationale:** To be completed.
+**Rationale:** The STMicroelectronics L7805ABV-DG is the preferred preliminary voltage regulator because it is already included in the team's design and provides a simple method of generating a regulated 5V supply. Its fixed output voltage, integrated protection features, and straightforward circuit requirements make it a practical choice for the GripRx Motor Board.
+
+However, the regulator's thermal performance must be evaluated before final selection. Linear regulators dissipate power equal to the voltage difference between the input and output multiplied by the load current:
+
+P = (Vin - Vout) x Iout
+
+For example, with a 12V input, 5V output, and 0.5A load:
+
+P = (12V - 5V) x 0.5A = 3.5W
+
+This represents significant heat dissipation and may require a heatsink or an alternative regulator design.
+
+The LM2596 switching regulator is a promising alternative because it can generate 5V more efficiently at higher current loads. However, it requires additional components and more careful PCB layout.
+
+The final regulator choice will depend on the total current required by the 5V electronics, the finalized input supply voltage, the available PCB space, and the thermal requirements. The team must verify that the regulator can safely provide the necessary output current without overheating.
+
+**Sources:**
+- [STMicroelectronics L78 Product Information](https://www.st.com/en/power-management/l78.html)
+- [STMicroelectronics L78 Datasheet](https://www.st.com/resource/en/datasheet/l78.pdf)
+- [Texas Instruments LM7805 Product Information](https://www.ti.com/product/LM7800/part-details/LM7805CT/NOPB)
+- [Texas Instruments LM2596 Product Information](https://www.ti.com/product/LM2596/part-details/LM2596S-5.0/NOPB)
+- [L7805ABV-DG Supplier Listing](https://www.digikey.com/en/products/detail/stmicroelectronics/L7805ABV-DG/3945936)
+- [LM7805CT/NOPB Supplier Listing](https://www.digikey.com/en/products/detail/texas-instruments/LM7805CT-NOPB/3901929)
+- [LM2596S-5.0/NOPB Supplier Listing](https://www.digikey.com/en/products/detail/texas-instruments/LM2596S-5-0-NOPB/334842)
 
 ## 4. Power Supply Selection
 

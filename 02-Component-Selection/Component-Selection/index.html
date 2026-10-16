@@ -988,17 +988,17 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Option 1: DFRobot FIT0492-A</strong> <br> <strong>Price:</strong> $11.90 each <br> <strong>Voltage:</strong> 12V <br> <strong>Speed:</strong> 50 RPM no-load <br> <strong>Rated torque:</strong> 9 kg-cm <br> <strong>Rated current:</strong> 0.68A <br> <strong>Stall current:</strong> 2.19A <br> <a href="https://www.dfrobot.com/product-1471.html">Product Link</a></td>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../motor1.jpg" data-desc-position="bottom"><img alt="DFRobot FIT0492-A" src="../motor1.jpg"></a><br> <strong>Option 1: DFRobot FIT0492-A</strong> <br> <strong>Price:</strong> $11.90 each <br> <strong>Voltage:</strong> 12V <br> <strong>Speed:</strong> 50 RPM no-load <br> <strong>Rated torque:</strong> 9 kg-cm <br> <strong>Rated current:</strong> 0.68A <br> <strong>Stall current:</strong> 2.19A <br> <a href="https://www.dfrobot.com/product-1471.html">Product Link</a></td>
 <td>- Lowest price among the compared motors <br> - High rated torque for a geared motor <br> - Low rotational speed suitable for controlled gripping <br> - Metal gearbox for mechanical durability</td>
 <td>- Requires a 12V supply for rated performance <br> - Stall current exceeds the 1A current-limit target in the current block diagram <br> - Relatively heavy at 210g <br> - No integrated position encoder</td>
 </tr>
 <tr>
-<td><strong>Option 2: Pololu 50:1 Metal Gearmotor 37D #4743</strong> <br> <strong>Price:</strong> $38.95 each <br> <strong>Voltage:</strong> 12V <br> <strong>Speed:</strong> 200 RPM no-load <br> <strong>Stall torque:</strong> 21 kg-cm (extrapolated) <br> <strong>Stall current:</strong> 5.5A <br> <a href="https://www.pololu.com/product/4743">Product Link</a></td>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../motor2.jpg" data-desc-position="bottom"><img alt="Pololu 50:1 37D" src="../motor2.jpg"></a><br> <strong>Option 2: Pololu 50:1 37D</strong> <br> <strong>Price:</strong> $38.95 each <br> <strong>Voltage:</strong> 12V <br> <strong>Speed:</strong> 200 RPM no-load <br> <strong>Stall torque:</strong> 21 kg-cm (extrapolated) <br> <strong>Stall current:</strong> 5.5A <br> <a href="https://www.pololu.com/product/4743">Product Link</a></td>
 <td>- Durable metal gearbox <br> - Higher speed for faster movement <br> - Optional encoder-equipped version <br> - Detailed manufacturer specifications</td>
 <td>- More expensive than Option 1 <br> - High stall current requires careful driver and power-supply selection <br> - Higher speed may require additional control for precise gripping <br> - Extrapolated stall torque is not a recommended continuous operating torque</td>
 </tr>
 <tr>
-<td><strong>Option 3: Pololu 150:1 Micro Metal Gearmotor, 12V</strong> <br> <strong>Listed price:</strong> $26.45 each <br> <strong>Voltage:</strong> 12V <br> <strong>Speed:</strong> 200 RPM no-load <br> <strong>Stall torque:</strong> approximately 2.9 kg-cm <br> <strong>Stall current:</strong> 0.8A <br> <a href="https://www.robotshop.com/products/12v-pololu-1501-micro-metal-gearmotor">Product Link</a></td>
+<td><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../motor3.webp" data-desc-position="bottom"><img alt="Pololu 150:1 Micro" src="../motor3.webp"></a><br> <strong>Option 3: Pololu 150:1 Micro</strong> <br> <strong>Listed price:</strong> $26.45 each <br> <strong>Voltage:</strong> 12V <br> <strong>Speed:</strong> 200 RPM no-load <br> <strong>Stall torque:</strong> approximately 2.9 kg-cm <br> <strong>Stall current:</strong> 0.8A <br> <a href="https://www.robotshop.com/products/12v-pololu-1501-micro-metal-gearmotor">Product Link</a></td>
 <td>- Compact and lightweight design <br> - Lower stall current than the other two motors <br> - Metal gearbox <br> - Easier to accommodate in a small mechanism</td>
 <td>- Much lower stall torque than the other options <br> - May not provide enough force for the gripping mechanism <br> - Higher no-load speed than Option 1 <br> - More expensive than Option 1</td>
 </tr>
@@ -1013,7 +1013,8 @@ The final motor selection will be confirmed after the mechanical design is compl
 - <a href="https://www.pololu.com/product/4743">Pololu 50:1 Metal Gearmotor Specifications</a>
 - <a href="https://www.robotshop.com/products/12v-pololu-1501-micro-metal-gearmotor">Pololu 150:1 Micro Metal Gearmotor Listing</a></p>
 <h2 id="2-h-bridge-motor-driver-selection">2. H-Bridge Motor Driver Selection</h2>
-<p><em>Table 2: H-Bridge Driver Comparison</em></p>
+<p><em>Table 2: H-Bridge Motor Driver Comparison</em></p>
+<p>The GripRx Motor Board requires an H-bridge driver to control the direction and speed of a brushed DC gear motor. The driver must support PWM control, operate with the motor supply voltage, and provide adequate current handling and protection against motor startup and stall conditions.</p>
 <table>
 <thead>
 <tr>

@@ -7,7 +7,7 @@ tags:
 <center>
 <font size= "6">Gabriel Toneser Facchin Datasheet</font><br>
 as part of<br>
-<font size= "8"> Project Name TBD</font><br>
+<font size= "8"> GripRx</font><br>
 for<br>
 <font size= "5"> Team 103 </font><br>
 
@@ -32,3 +32,15 @@ for<br>
 To review the details listed of the material used to construct the subsection, you can review it in the ["BOM"](https://embedded-systems-design.github.io/EGR304DataSheetTemplate/03-BOM/BOM/) section of the datasheet.
 
 To review the Motor Board design and its electrical connections, see the ["Block Diagram"](01-Block-Diagram/Block-Diagram.md) section of this datasheet.
+
+## Component Selection
+
+The major components for the GripRx Motor Board have been compared based on performance, electrical specifications, cost, and compatibility.
+
+[View Component Selection](02-Component-Selection/Component-Selection.md)
+
+## Power Budget
+
+The power budget documents the electrical requirements and power distribution of the GripRx Motor Board.
+
+[View Power Budget](05-Power-Budget/Power-Budget.md)

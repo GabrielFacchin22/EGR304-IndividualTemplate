@@ -51,13 +51,24 @@ The GripRx Motor Board requires an H-bridge driver to control the direction and 
 
 | Solution | Pros | Cons |
 |---|---|---|
-| Option 1: To be researched | Pending | Pending |
-| Option 2: To be researched | Pending | Pending |
-| Option 3: To be researched | Pending | Pending |
+| <img src="driver1.jpeg" width="150"><br> **Option 1: Texas Instruments DRV8871DDAR** <br> **Approximate price:** $2.90 each <br> **Supply voltage:** 6.5–45V <br> **Peak output current:** 3.6A <br> **Package:** 8-pin HSOP <br> [Product Link](https://www.ti.com/product/DRV8871) | - Supports bidirectional brushed DC motor control <br> - Supports PWM speed control <br> - Adjustable current regulation using an external resistor <br> - Integrated overcurrent and thermal protection <br> - Relatively simple two-input interface | - Current limit must be configured correctly <br> - Thermal design limits continuous current <br> - Does not provide the same current feedback capabilities as Option 3 <br> - Current block diagram may need changes to the current-limit setting |
+| <img src="driver2.jpeg" width="150"><br> **Option 2: Texas Instruments DRV8876PWPR** <br> **Approximate price:** $1.95 each <br> **Supply voltage:** 4.5–37V <br> **Peak output current:** 3.5A <br> **Package:** 16-pin HTSSOP <br> [Product Link](https://www.ti.com/product/DRV8876) | - Lowest estimated unit price <br> - Integrated current sensing and regulation <br> - Supports PWM motor control <br> - Compatible with 3.3V and 5V logic <br> - Integrated fault protection | - More pins and control configurations <br> - Requires careful PCB layout and thermal design <br> - Additional configuration may increase circuit complexity <br> - Not a direct pin-compatible replacement for the DRV8871 |
+| <img src="driver3.jpeg" width="150"><br> **Option 3: Texas Instruments DRV8251ADDAR** <br> **Approximate price:** $2.40 each <br> **Minimum supply voltage:** 4.5V <br> **Absolute maximum supply voltage:** 50V <br> **Peak output current:** 4.1A <br> **Package:** 8-pin HSOP <br> [Product Link](https://www.ti.com/product/DRV8251A) | - Highest specified peak current among the options <br> - Integrated current sensing and regulation <br> - Current feedback may support stall detection <br> - Supports common microcontroller logic levels <br> - Integrated thermal and overcurrent protection <br> - Compact package | - Requires configuration of current regulation <br> - Thermal performance must be verified <br> - Motor current must remain within safe operating limits <br> - Requires verification of the control interface |
 
-**Choice:** Pending component comparison.
+**Preliminary Choice:** Option 3 – Texas Instruments DRV8251ADDAR.
 
-**Rationale:** To be completed.
+**Rationale:** The DRV8251A is the preferred preliminary motor driver because it provides integrated current sensing, adjustable current regulation, and a peak output current rating of 4.1A. Its operating voltage range accommodates the proposed motor supply.
+
+Current regulation is particularly useful for the GripRx project because the motor may experience increased mechanical resistance while gripping an object. The integrated current sensing feature may also help detect motor loading or stall conditions.
+
+The DRV8871 remains a viable alternative and is already included in the team's preliminary block diagram. However, the DRV8251A offers additional current feedback functionality that may be beneficial during development.
+
+The final selection depends on the required gripping torque, expected motor current, thermal performance, and implementation of the motor control signals. The proposed 9V supply must also be reconsidered because the selected motor is rated for 12V. The block diagram and PCB design must be updated if the team changes from the DRV8871 to the DRV8251A.
+
+**Sources:**
+- [Texas Instruments DRV8871 Product Information](https://www.ti.com/product/DRV8871)
+- [Texas Instruments DRV8876 Product Information](https://www.ti.com/product/DRV8876)
+- [Texas Instruments DRV8251A Product Information](https://www.ti.com/product/DRV8251A)
 
 ## 3. Voltage Regulator Selection
 

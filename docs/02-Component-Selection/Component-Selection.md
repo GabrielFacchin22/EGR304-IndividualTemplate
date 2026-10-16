@@ -1,58 +1,90 @@
+
 ---
-title: Component Selection Example
+title: Component Selection
 ---
 
-## Examples
+# Component Selection – GripRx Motor Board
 
-### Style 1
+**Course:** EGR 304 – Embedded Systems Design  
+**Team:** 103 – GripRx  
+**Project:** Motor Board
 
-> This is the example found in the assignment, uses more html
+## Overview
 
-*Table 1: Example component selection*
+The purpose of this assignment is to evaluate and compare major electronic components for the GripRx Motor Board. The board uses a PIC18F57Q43 microcontroller to control a DC gear motor through an H-bridge motor driver.
 
-**External Clock Module**
+The selection process considers electrical compatibility, performance, cost, power requirements, and ease of integration.
 
-| **Solution**                                                                                                                                                                                      | **Pros**                                                                                                                                    | **Cons**                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| ![](image1.png)<br>Option 1.<br> XC1259TR-ND surface mount crystal<br>$1/each<br>[link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)                 | \* Inexpensive[^1]<br>\* Compatible with PSoC<br>\* Meets surface mount constraint of project                                               | \* Requires external components and support circuitry for interface<br>\* Needs special PCB layout. |
-| ![](image3.png)<br>\* Option 2. <br>\* CTX936TR-ND surface mount oscillator <br>\* $1/each <br>\* [Link to product](http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940) | \* Outputs a square wave <br>\* Stable over operating temperature <br> \* Direct interface with PSoC (no external circuitry required) range | * More expensive <br>\* Slow shipping speed                                                         |
+The major components evaluated are:
 
-**Choice:** Option 2: CTX936TR-ND surface mount oscillator
+1. DC Gear Motor
+2. H-Bridge Motor Driver
+3. 5V Voltage Regulator
+4. 9V Power Supply
 
-**Rationale:** A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.
+## 1. DC Gear Motor Selection
 
-### Style 2
+*Table 1: DC Gear Motor Comparison*
 
-> Also acceptable, more markdown friendly
+| Solution | Pros | Cons |
+|---|---|---|
+| **Option 1: DFRobot FIT0492-A** <br> **Price:** $11.90 each <br> **Voltage:** 12V <br> **Speed:** 50 RPM no-load <br> **Rated torque:** 9 kg-cm <br> **Rated current:** 0.68A <br> **Stall current:** 2.19A <br> [Product Link](https://www.dfrobot.com/product-1471.html) | - Lowest price among the compared motors <br> - High rated torque for a geared motor <br> - Low rotational speed suitable for controlled gripping <br> - Metal gearbox for mechanical durability | - Requires a 12V supply for rated performance <br> - Stall current exceeds the 1A current-limit target in the current block diagram <br> - Relatively heavy at 210g <br> - No integrated position encoder |
+| **Option 2: Pololu 50:1 Metal Gearmotor 37D #4743** <br> **Price:** $38.95 each <br> **Voltage:** 12V <br> **Speed:** 200 RPM no-load <br> **Stall torque:** 21 kg-cm (extrapolated) <br> **Stall current:** 5.5A <br> [Product Link](https://www.pololu.com/product/4743) | - Durable metal gearbox <br> - Higher speed for faster movement <br> - Optional encoder-equipped version <br> - Detailed manufacturer specifications | - More expensive than Option 1 <br> - High stall current requires careful driver and power-supply selection <br> - Higher speed may require additional control for precise gripping <br> - Extrapolated stall torque is not a recommended continuous operating torque |
+| **Option 3: Pololu 150:1 Micro Metal Gearmotor, 12V** <br> **Listed price:** $26.45 each <br> **Voltage:** 12V <br> **Speed:** 200 RPM no-load <br> **Stall torque:** approximately 2.9 kg-cm <br> **Stall current:** 0.8A <br> [Product Link](https://www.robotshop.com/products/12v-pololu-1501-micro-metal-gearmotor) | - Compact and lightweight design <br> - Lower stall current than the other two motors <br> - Metal gearbox <br> - Easier to accommodate in a small mechanism | - Much lower stall torque than the other options <br> - May not provide enough force for the gripping mechanism <br> - Higher no-load speed than Option 1 <br> - More expensive than Option 1 |
 
-**External Clock Module**
+**Preliminary Choice:** Option 1 – DFRobot FIT0492-A Metal DC Gear Motor.
 
-1. XC1259TR-ND surface mount crystal
+**Rationale:** The DFRobot FIT0492-A is the preferred preliminary choice because it provides a useful combination of low output speed, substantial rated torque, and low cost. Its rated torque of 9 kg-cm and rated current of 0.68A make it a promising candidate for the GripRx gripping mechanism. The 50 RPM no-load speed may also help provide controlled opening and closing movement. Compared with the Pololu alternatives, it offers an attractive balance between torque and cost.
+However, the motor is rated for 12V, while the current block diagram specifies a 9V power supply. The power supply selection should therefore be reconsidered. Additionally, the motor has a stall current of 2.19A, which exceeds the currently proposed 1A motor-driver current limit. The team must evaluate the motor driver's current-limit setting and confirm that the motor can produce sufficient gripping force without overheating or stalling.
+The final motor selection will be confirmed after the mechanical design is completed and the required gripping torque is calculated or measured.
 
-    ![](image1.png)
+**Sources:**
+- [DFRobot FIT0492-A Manufacturer Specifications](https://www.dfrobot.com/product-1471.html)
+- [Pololu 50:1 Metal Gearmotor Specifications](https://www.pololu.com/product/4743)
+- [Pololu 150:1 Micro Metal Gearmotor Listing](https://www.robotshop.com/products/12v-pololu-1501-micro-metal-gearmotor)
 
-    * $1/each
-    * [link to product](http://www.digikey.com/product-detail/en/ECS-40.3-S-5PX-TR/XC1259TR-ND/827366)
+## 2. H-Bridge Motor Driver Selection
 
-    | Pros                                      | Cons                                                             |
-    | ----------------------------------------- | ---------------------------------------------------------------- |
-    | Inexpensive                               | Requires external components and support circuitry for interface |
-    | Compatible with PSoC                      | Needs special PCB layout.                                        |
-    | Meets surface mount constraint of project |
+*Table 2: H-Bridge Driver Comparison*
 
-1. CTX936TR-ND surface mount oscillator
+| Solution | Pros | Cons |
+|---|---|---|
+| Option 1: To be researched | Pending | Pending |
+| Option 2: To be researched | Pending | Pending |
+| Option 3: To be researched | Pending | Pending |
 
-    ![](image3.png)
+**Choice:** Pending component comparison.
 
-    * $1/each
-    * [Link to product](http://www.digikey.com/product-detail/en/636L3I001M84320/CTX936TR-ND/2292940)
+**Rationale:** To be completed.
 
-    | Pros                                                              | Cons                |
-    | ----------------------------------------------------------------- | ------------------- |
-    | Outputs a square wave                                             | More expensive      |
-    | Stable over operating temperature                                 | Slow shipping speed |
-    | Direct interface with PSoC (no external circuitry required) range |
+## 3. Voltage Regulator Selection
 
-**Choice:** Option 2: CTX936TR-ND surface mount oscillator
+*Table 3: Voltage Regulator Comparison*
 
-**Rationale:** A clock oscillator is easier to work with because it requires no external circuitry in order to interface with the PSoC. This is particularly important because we are not sure of the electrical characteristics of the PCB, which could affect the oscillation of a crystal. While the shipping speed is slow, according to the website if we order this week it will arrive within 3 weeks.
+| Solution | Pros | Cons |
+|---|---|---|
+| Option 1: To be researched | Pending | Pending |
+| Option 2: To be researched | Pending | Pending |
+| Option 3: To be researched | Pending | Pending |
+
+**Choice:** Pending component comparison.
+
+**Rationale:** To be completed.
+
+## 4. Power Supply Selection
+
+*Table 4: Power Supply Comparison*
+
+| Solution | Pros | Cons |
+|---|---|---|
+| Option 1: To be researched | Pending | Pending |
+| Option 2: To be researched | Pending | Pending |
+| Option 3: To be researched | Pending | Pending |
+
+**Choice:** Pending component comparison.
+
+**Rationale:** To be completed.
+
+## Final Component Selection Summary
+
+This section will summarize the selected components after completing the comparisons.

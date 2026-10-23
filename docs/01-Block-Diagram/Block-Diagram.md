@@ -17,4 +17,4 @@ The motor side is powered by a 9 V, 3 A power supply. A 5 V linear regulator is 
 
 The completed block diagram for the GripRx motor board is shown below.
 
-![GripRx Motor Board Block Diagram](block-diagram.png)
+![GripRx Motor Board Block Diagram](block-diagram%20%282%29.png)

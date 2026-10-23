@@ -876,7 +876,7 @@
   <h1>Welcome</h1>
 
 <p></p><center>
-<font size="6">Gabriel Toneser Facchin Datasheet</font><br>
+<font size="6">Gabriel Toneser Facchin</font><br>
 as part of<br>
 <font size="8"> GripRx</font><br>
 for<br>
@@ -885,25 +885,93 @@ for<br>
 </p></center><p></p>
 <h2 id="introduction">Introduction</h2>
 <ul>
-<li>This needs to be updated so that a reader gets an idea of the purpose of this datasheet.</li>
+<li>This datasheet documents the design and development of the Motor Board for GripRx, a team project developed in EGR 304 – Embedded Systems Design at Arizona State University.</li>
 </ul>
+<p>The purpose of this document is to present the Motor Board's electrical architecture, component selection, schematic design, power requirements, and integration with the other subsystems. It provides technical information supporting the design, implementation, and testing of the motor control system.</p>
 <h3 id="project-summary">Project Summary</h3>
 <ul>
-<li>This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.</li>
+<li>GripRx is a proposed rehabilitation device designed to provide adjustable resistance for hand-grip exercises. The system is divided into three main subsystems: the User Interface Board, Force Board, and Motor Board.</li>
+</ul>
+<p>The User Interface Board allows the user to select exercise settings. The Force Board measures the applied force and communicates control and safety information. The Motor Board adjusts the resistance mechanism by controlling a DC gear motor.</p>
+<p>The Motor Board uses a Microchip PIC18F57Q43 Curiosity Nano microcontroller to control a Texas Instruments DRV8871DDAR H-bridge driver and a DFRobot FIT0492-A DC gear motor. Two Omron D2F-01L limit switches detect the mechanical travel limits.</p>
+<p>The planned system uses a 9V, 3A DC power supply provided by the professor, along with an L7805ABV-DG voltage regulator for the 5V electronics.</p>
+<ul>
 <li>Add context that ties into the link to your <a href="https://embedded-systems-design.github.io/EGR304TeamTemplate/">team report.</a></li>
 </ul>
 <h3 id="my-contribution">My Contribution</h3>
 <ul>
-<li>This needs to be updated to reflect a team introduction</li>
-<li>Content should also help an unfamiliar reader navigate to areas of interest. Information like:</li>
+<li>
+<p>My primary responsibility within Team 103 is the electrical design and development of the GripRx Motor Board.</p>
+</li>
+<li>
+<p>My responsibilities include:</p>
+</li>
+<li>
+<p>Developing the Motor Board block diagram and identifying electrical connections.</p>
+</li>
+<li>Comparing and selecting the major electrical components.</li>
+<li>Designing the Motor Board schematic and PCB using KiCad.</li>
+<li>Integrating the PIC18F57Q43 microcontroller with the H-bridge motor driver.</li>
+<li>Implementing motor speed and direction control using PWM and digital signals.</li>
+<li>Connecting the home and end limit switches.</li>
+<li>Establishing communication with the Force Board through UART.</li>
+<li>Evaluating electrical protection and power requirements.</li>
+<li>Supporting subsystem integration and testing.</li>
 </ul>
+<p>The Motor Board receives commands and safety information from the Force Board and uses them to control the resistance-adjustment mechanism.</p>
+<p>The following sections document the electrical design and development of my subsystem.</p>
 <p>To review the details listed of the material used to construct the subsection, you can review it in the <a href="https://embedded-systems-design.github.io/EGR304DataSheetTemplate/03-BOM/BOM/">"BOM"</a> section of the datasheet.</p>
 <p>To review the Motor Board design and its electrical connections, see the <a href="01-Block-Diagram/Block-Diagram/">"Block Diagram"</a> section of this datasheet.</p>
 <h2 id="component-selection">Component Selection</h2>
-<p>The major components for the GripRx Motor Board have been compared based on performance, electrical specifications, cost, and compatibility.</p>
-<p><a href="02-Component-Selection/Component-Selection/">View Component Selection</a></p>
+<p>The major components for the GripRx Motor Board were evaluated based on electrical specifications, cost, performance, and compatibility.</p>
+<p>The planned components include:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Selected Part</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microcontroller</td>
+<td>Microchip PIC18F57Q43 Curiosity Nano</td>
+</tr>
+<tr>
+<td>Motor Driver</td>
+<td>Texas Instruments DRV8871DDAR</td>
+</tr>
+<tr>
+<td>DC Gear Motor</td>
+<td>DFRobot FIT0492-A</td>
+</tr>
+<tr>
+<td>Voltage Regulator</td>
+<td>STMicroelectronics L7805ABV-DG</td>
+</tr>
+<tr>
+<td>Limit Switches</td>
+<td>Omron D2F-01L</td>
+</tr>
+<tr>
+<td>Power Supply</td>
+<td>9V, 3A DC wall adapter BestCH</td>
+</tr>
+<tr>
+<td><a href="02-Component-Selection/Component-Selection/">View Component Selection</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="power-budget">Power Budget</h2>
-<p>The power budget documents the electrical requirements and power distribution of the GripRx Motor Board.</p>
+<p>The GripRx Motor Board is designed to operate from a 9V DC,
+3A power supply provided by the professor.</p>
+<p>The power supply has a maximum rated output capacity of 27W.
+The L7805ABV-DG voltage regulator is intended to provide
+a regulated 5V supply for the control electronics.</p>
+<p>The detailed power budget will be completed after the
+electrical requirements of the individual components
+have been evaluated.</p>
 <p><a href="05-Power-Budget/Power-Budget/">View Power Budget</a></p>
 
 

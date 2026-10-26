@@ -1,8 +1,4 @@
 
----
-title: Component Selection
----
-
 # Component Selection – GripRx Motor Board
 
 **Course:** EGR 304 – Embedded Systems Design  

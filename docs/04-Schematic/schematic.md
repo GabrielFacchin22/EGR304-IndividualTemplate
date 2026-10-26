@@ -1,8 +1,4 @@
 
----
-title: Schematic
----
-
 ## Overview
 
 This schematic shows the **GripRx Motor Board**, designed for Team 103's GripRx project in EGR 304 Embedded Systems Design.

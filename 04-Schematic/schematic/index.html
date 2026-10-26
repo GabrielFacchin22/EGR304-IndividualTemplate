@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#title-schematic" class="md-skip">
           Skip to content
         </a>
       
@@ -640,6 +640,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#title-schematic" class="md-nav__link">
+    <span class="md-ellipsis">
+      title: Schematic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
@@ -649,9 +658,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+  <a href="#schematic-drawings" class="md-nav__link">
     <span class="md-ellipsis">
-      Resouces
+      Schematic Drawings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
     </span>
   </a>
   
@@ -800,6 +818,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#title-schematic" class="md-nav__link">
+    <span class="md-ellipsis">
+      title: Schematic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
@@ -809,9 +836,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+  <a href="#schematic-drawings" class="md-nav__link">
     <span class="md-ellipsis">
-      Resouces
+      Schematic Drawings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
     </span>
   </a>
   
@@ -842,21 +878,30 @@
 
   <h1>Schematic</h1>
 
+<hr>
+<h2 id="title-schematic">title: Schematic</h2>
 <h2 id="overview">Overview</h2>
-<p>This schematic is design to support .... (highlight functionally, power, and controller).</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Screenshot.png" data-desc-position="bottom"><img alt="schematic" height:_300_="height:&quot;300;&quot;" src="../Screenshot.png" style="style" width:_350_="width:&quot;350&quot;"></a>
-<strong>Figure ##:</strong> Showing a example schematic.</p>
-<h2 id="resouces">Resouces</h2>
-<p>The schematic as a PDF download is available <a href="../ExampleSchematic.pdf"><em>here</em></a>, and the Zip folder of the project <a href="../dummyZip.zip"><em>here</em></a>.</p>
+<p>This schematic shows the <strong>GripRx Motor Board</strong>, designed for Team 103's GripRx project in EGR 304 Embedded Systems Design.</p>
+<p><strong>Sheet 1</strong> contains the 9 V power input with a 2 A slow-blow fuse, reverse-polarity protection diode, and L7805 5 V linear regulator. It also includes the PIC18F57Q43 Curiosity Nano microcontroller, Nano power isolation jumpers, an 8-pin ribbon connector to the Force Sensing Board, a spare GPIO header, and test points for power and control signals.</p>
+<p><strong>Sheet 2</strong> contains the DRV8871 H-bridge motor driver controlling the DFRobot FIT0492-A DC gear motor. It includes motor power filtering capacitors, a current-limit resistor, HOME and END limit switches with pull-up resistors and filtering capacitors, and a debug push button and LED.</p>
+<p>The PIC18F57Q43 controls the motor using PWM and direction signals, monitors the limit switches, and communicates with the Force Sensing Board through UART and force-related signals.</p>
+<p>The schematic was created in KiCad and passed the Electrical Rules Checker (ERC) with <strong>0 errors and 0 warnings</strong>.</p>
+<h2 id="schematic-drawings">Schematic Drawings</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../GripRx_Motor_Board_Page-1.png" data-desc-position="bottom"><img alt="GripRx Motor Board - Sheet 1" src="../GripRx_Motor_Board_Page-1.png"></a></p>
+<p><strong>Figure 1.</strong> Sheet 1: Power supply, microcontroller, ribbon connector, GPIO header, and test points.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../GripRx_Motor_Board_Page-2.png" data-desc-position="bottom"><img alt="GripRx Motor Board - Sheet 2" src="../GripRx_Motor_Board_Page-2.png"></a></p>
+<p><strong>Figure 2.</strong> Sheet 2: DRV8871 motor driver, DC gear motor, HOME and END limit switches, and debug circuitry.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="../GripRx_Motor_Board.pdf">Schematic (PDF)</a></li>
+<li><a href="../GripRx_Motor_Board_Project.zip">KiCad Project (ZIP)</a></li>
+</ul>
 
 
 
 
 
 
-
-  
-  
 
 
 

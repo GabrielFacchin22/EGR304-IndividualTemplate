@@ -30,7 +30,9 @@ The Motor Board uses a Microchip PIC18F57Q43 Curiosity Nano microcontroller to c
 
 The planned system uses a 9V, 3A DC power supply provided by the professor, along with an L7805ABV-DG voltage regulator for the 5V electronics.
 
-* Add context that ties into the link to your [team report.](https://embedded-systems-design.github.io/EGR304TeamTemplate/)
+For more information about the complete GripRx system, including the overall system architecture, team design decisions, and integration of the three subsystems, visit our official team project website.
+
+**[View Team 103 – GripRx Project Website](https://egr304-2026-f-103.github.io/)**
 
 
 ### My Contribution

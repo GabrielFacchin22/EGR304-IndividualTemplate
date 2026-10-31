@@ -10,6 +10,24 @@ The design uses a nominal 9 V, 3 A DC power adapter. An L7805ABV-DG linear volta
 
 The purpose of this power budget is to estimate the current consumption of the major components, evaluate the available power capacity, and identify electrical and thermal limitations.
 
+## Power Budget Spreadsheet
+
+### Component Power Budget
+
+![GripRx Component Power Budget](GripRx_Power_Budget_Components.png)
+
+**Figure 1.** Preliminary estimated current consumption of the major GripRx Motor Board components.
+
+### Power Budget Summary
+
+![GripRx Power Budget Summary](GripRx_Power_Budget_Summary.png)
+
+**Figure 2.** Estimated 9V input current, 25% safety margin, and available adapter capacity.
+
+### Downloadable Spreadsheet
+
+[Download the completed Power Budget Excel](GripRx_Power_Budget_Completed.xlsx)
+
 ## Power Supply Specifications
 
 | Parameter | Value |
@@ -194,3 +212,4 @@ The final power budget will be confirmed by measuring the motor current, 5 V log
 - [Texas Instruments DRV8871 Datasheet](https://www.ti.com/lit/ds/symlink/drv8871.pdf)
 - [DFRobot FIT0492-A Motor Datasheet (PDF)](https://media.digikey.com/pdf/Data%20Sheets/DFRobot%20PDFs/FIT0492-A_Web.pdf)
 - [Team 103 – GripRx Project](https://egr304-2026-f-103.github.io/)
+- [GripRx Motor Board Power Budget — Excel Spreadsheet](GripRx_Power_Budget_Completed.xlsx)

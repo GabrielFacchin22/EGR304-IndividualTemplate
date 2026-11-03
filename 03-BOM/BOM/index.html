@@ -26,7 +26,7 @@
 
     
       
-        <title>Bill of Materials - EGR 304 Data Sheet Template</title>
+        <title>BOM - EGR 304 Data Sheet Template</title>
       
     
     
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bill of Materials
+              BOM
             
           </span>
         </div>
@@ -563,7 +563,7 @@
           
   
   <span class="md-ellipsis">
-    Bill of Materials
+    BOM
   </span>
   
 
@@ -574,7 +574,7 @@
         
   
   <span class="md-ellipsis">
-    Bill of Materials
+    BOM
   </span>
   
 
@@ -603,18 +603,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
+      Bill of Materials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#component-purchasing" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      Component Purchasing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasheets
     </span>
   </a>
   
@@ -818,18 +827,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Table)
+      Bill of Materials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#component-purchasing" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials Example (as Image)
+      Component Purchasing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasheets
     </span>
   </a>
   
@@ -858,68 +876,239 @@
   
 
 
-  <h1>Bill of Materials</h1>
+  <h1>BOM</h1>
 
 <h2 id="overview">Overview</h2>
-<p>written context</p>
-<h2 id="bill-of-materials-example-as-table">Bill of Materials Example (as Table)</h2>
-<p><em>Table ##: An example of one approach to adding your BOM table to this section.</em></p>
+<p>This Bill of Materials (BOM) documents the electronic components selected for the GripRx Motor Board, developed as part of Team 103 in EGR 304 Embedded Systems Design.</p>
+<p>The Motor Board uses a PIC18F57Q43 Curiosity Nano microcontroller, a DRV8871 motor driver, and an L7805 voltage regulator to control a DC gear motor. The design includes limit switches, power filtering capacitors, connectors, status LEDs, and test points.</p>
+<p>Components are sourced from DigiKey, Newark, existing inventory, and class-provided materials.</p>
+<h2 id="bill-of-materials">Bill of Materials</h2>
+<p>The following table identifies the components used in the Motor Board design, including their reference designators, quantities, manufacturer part numbers, and suppliers. N/A suppliers mean the components can be found in class.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><strong>Part Name/Description</strong></th>
-<th style="text-align: left;"><strong>Qty</strong></th>
-<th style="text-align: left;"><strong>Unit Cost</strong></th>
-<th style="text-align: left;"><strong>Total Cost</strong></th>
-<th style="text-align: left;"><strong>Manufacture</strong></th>
-<th style="text-align: left;"><strong>Manufacturer #</strong></th>
-<th style="text-align: left;"><strong>Vendor Link</strong></th>
-<th style="text-align: left;"><strong>Datasheet Link</strong></th>
-<th style="text-align: left;"><strong>Schematic Reference Designators</strong></th>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: right;">Qty</th>
+<th style="text-align: left;">Manufacturer Part Number</th>
+<th style="text-align: left;">Supplier</th>
+<th style="text-align: left;">Supplier Part Number</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">8-bit SIPO/SISO Shift Register, SOIC-16 package</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">$0.49</td>
-<td style="text-align: left;">$ 0.49</td>
-<td style="text-align: left;">NXP</td>
-<td style="text-align: left;">74HC595D,112</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/nexperia-usa-inc/74HC595D-112/763550">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf">datasheet link</a></td>
+<td style="text-align: left;">PIC18F57Q43 Curiosity Nano</td>
 <td style="text-align: left;">U1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">DM164150</td>
+<td style="text-align: left;">Already Owned</td>
+<td style="text-align: left;">N/A</td>
 </tr>
 <tr>
-<td style="text-align: left;">0.1 µF Ceramic Capacitor, +/-10%, X7R, 50V, 0805 package</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">0.2750</td>
-<td style="text-align: left;">$2.75</td>
-<td style="text-align: left;">KEMET</td>
-<td style="text-align: left;">C0805F104K5RACTU</td>
-<td style="text-align: left;">PRLTA 109</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">C2, C4, C6, C7, C8, C9, C10, C11, C12, C16</td>
+<td style="text-align: left;">5V Voltage Regulator</td>
+<td style="text-align: left;">U2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">L7805ABV-DG</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">51AC9206</td>
+</tr>
+<tr>
+<td style="text-align: left;">Motor Driver</td>
+<td style="text-align: left;">U3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">DRV8871DDAR</td>
+<td style="text-align: left;">DigiKey</td>
+<td style="text-align: left;">296-43024-1-ND</td>
+</tr>
+<tr>
+<td style="text-align: left;">DC Gear Motor</td>
+<td style="text-align: left;">J4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FIT0492-A</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">33AK3163</td>
+</tr>
+<tr>
+<td style="text-align: left;">150uF Capacitor</td>
+<td style="text-align: left;">C1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">EEUFR1E151B</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">62W8036</td>
+</tr>
+<tr>
+<td style="text-align: left;">0.33uF Capacitor</td>
+<td style="text-align: left;">C2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">MPMLR50V334KX7RTB5</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">68AH8543</td>
+</tr>
+<tr>
+<td style="text-align: left;">0.1uF Capacitors</td>
+<td style="text-align: left;">C3, C5, C6, C9-C12</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">MPMLR50V104KX7RTB2-5</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">68AH8539</td>
+</tr>
+<tr>
+<td style="text-align: left;">10uF Capacitor</td>
+<td style="text-align: left;">C4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">MCGPR25V106M5X11</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">38K4677</td>
+</tr>
+<tr>
+<td style="text-align: left;">47uF Capacitor</td>
+<td style="text-align: left;">C7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">ECA1EHG470</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">17T5002</td>
+</tr>
+<tr>
+<td style="text-align: left;">100uF Capacitor</td>
+<td style="text-align: left;">C8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">EEUFR1E101</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">58T1749</td>
+</tr>
+<tr>
+<td style="text-align: left;">Schottky Diode</td>
+<td style="text-align: left;">D1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1N5822</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">33AK8198</td>
+</tr>
+<tr>
+<td style="text-align: left;">Green LED</td>
+<td style="text-align: left;">D2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Class Provided</td>
+<td style="text-align: left;">Class</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">Red LED</td>
+<td style="text-align: left;">D3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Class Provided</td>
+<td style="text-align: left;">Class</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">1k Ohm Resistors</td>
+<td style="text-align: left;">R1, R3, R8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">CFR-25JR-52-1K</td>
+<td style="text-align: left;">Class</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">10k Ohm Resistors</td>
+<td style="text-align: left;">R2, R5-R7</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">MFR-25FBF52-10K</td>
+<td style="text-align: left;">Class</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">64.9k Ohm Resistor</td>
+<td style="text-align: left;">R4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">MFR-25FBF52-64K9</td>
+<td style="text-align: left;">DigiKey</td>
+<td style="text-align: left;">64.9KXBK-ND</td>
+</tr>
+<tr>
+<td style="text-align: left;">Limit Switches</td>
+<td style="text-align: left;">SW1, SW2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">D2F-01L</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">36K7261</td>
+</tr>
+<tr>
+<td style="text-align: left;">Debug Push Button</td>
+<td style="text-align: left;">SW3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">B3F-1000</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">36K7138</td>
+</tr>
+<tr>
+<td style="text-align: left;">DC Power Jack</td>
+<td style="text-align: left;">J1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">PJ-102AH</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">59AM2884</td>
+</tr>
+<tr>
+<td style="text-align: left;">8-Pin Header</td>
+<td style="text-align: left;">J2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">5-102618-2</td>
+<td style="text-align: left;">Class</td>
+<td style="text-align: left;">N/A</td>
+</tr>
+<tr>
+<td style="text-align: left;">10-Pin GPIO Header</td>
+<td style="text-align: left;">J3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">MTLW-110-06-T-S-060</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">40AC2655</td>
+</tr>
+<tr>
+<td style="text-align: left;">2-Pin Jumper Headers</td>
+<td style="text-align: left;">JP1-JP3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">M20-9990246</td>
+<td style="text-align: left;">DigiKey</td>
+<td style="text-align: left;">952-2262-ND</td>
+</tr>
+<tr>
+<td style="text-align: left;">JP1/JP2 Jumper Caps</td>
+<td style="text-align: left;">JP1, JP2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">M7583-05</td>
+<td style="text-align: left;">DigiKey</td>
+<td style="text-align: left;">952-2882-ND</td>
+</tr>
+<tr>
+<td style="text-align: left;">JP3 Motor Power Jumper Cap</td>
+<td style="text-align: left;">JP3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">QPC02SXGN-RC</td>
+<td style="text-align: left;">DigiKey</td>
+<td style="text-align: left;">S9337-ND</td>
+</tr>
+<tr>
+<td style="text-align: left;">PCB Test Points</td>
+<td style="text-align: left;">TP1-TP9</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">5000</td>
+<td style="text-align: left;">Newark</td>
+<td style="text-align: left;">07J9695</td>
 </tr>
 </tbody>
 </table>
-<p>Note: Setting it up as a table is nice because it is completely viewable without scaling issues. <ins>Downside</ins> is that you have to do the math.</p>
-<ul>
-<li>You could also import your BOM via a screenshot of the spreadsheet created BOM</li>
-</ul>
-<h2 id="bill-of-materials-example-as-image">Bill of Materials Example (as Image)</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../BOM-Screenshot.png" data-desc-position="bottom"><img _2000_="&quot;2000&quot;" alt="" src="../BOM-Screenshot.png" style="style" width:="width:"></a>
-<strong>Figure 2:</strong> Example Bill of Materials as a screenshot.</p>
-<p>As you can see, the text can be difficult to read without opening the image.</p>
+<h2 id="component-purchasing">Component Purchasing</h2>
+<p>Components requiring purchase are ordered through DigiKey and Newark using the EGR 304 purchase request forms.</p>
+<p>Class-provided and already-owned components are included in the BOM for completeness but are excluded from purchase requests.</p>
+<h2 id="datasheets">Datasheets</h2>
+<p>Manufacturer datasheets for the selected components are provided in the project repository.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

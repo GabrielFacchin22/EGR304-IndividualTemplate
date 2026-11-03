@@ -52,4 +52,4 @@ Manufacturer datasheets for the selected components are provided in the project 
 
 The complete GripRx Motor Board Bill of Materials is available as an Excel spreadsheet.
 
-[Download GripRx BOM Spreadsheet](GripRx_BOM(4).xlsx)
+[Download GripRx BOM Spreadsheet](GripRx_BOM.xlsx)

@@ -28,3 +28,13 @@ Download the complete GripRx Motor Board KiCad project, including the PCB layout
 The Gerber and drill files for the GripRx Motor Board are available below.
 
 [Download GripRx Motor Board Gerber Files (ZIP)](GripRx_Motor_Board_2_Gerbers.zip)
+
+## Design Rules Check (DRC)
+
+The GripRx Motor Board was verified using KiCad's Design Rules Checker.
+
+- 0 DRC violations
+- 0 unconnected pads
+- 0 footprint errors
+
+[Download DRC Confirmation Report (PDF)](GripRx_DRC_Confirmation.pdf)

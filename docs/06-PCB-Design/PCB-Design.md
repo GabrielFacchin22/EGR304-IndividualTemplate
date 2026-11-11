@@ -22,3 +22,9 @@ The complete PCB layout is available as a downloadable PDF, including the front 
 Download the complete GripRx Motor Board KiCad project, including the PCB layout, schematics, and custom libraries.
 
 [Download GripRx KiCad Project (ZIP)](GripRx_KiCad_Project_Final.zip)
+
+## PCB Manufacturing Files
+
+The Gerber and drill files for the GripRx Motor Board are available below.
+
+[Download GripRx Motor Board Gerber Files (ZIP)](GripRx_Motor_Board_2_Gerbers.zip)

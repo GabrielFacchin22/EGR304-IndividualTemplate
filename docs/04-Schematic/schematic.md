@@ -23,5 +23,5 @@ The schematic was created in KiCad and passed the Electrical Rules Checker (ERC)
 
 ## Resources
 
-- [Schematic (PDF)](GripRx_Motor_Board.pdf)
+- [Final Schematic (PDF)](GripRx_Final_Schematic.pdf)
 - [KiCad Project (ZIP)](GripRx_Motor_Board_Project.zip)

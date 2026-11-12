@@ -38,3 +38,13 @@ The GripRx Motor Board was verified using KiCad's Design Rules Checker.
 - 0 footprint errors
 
 [Download DRC Confirmation Report (PDF)](GripRx_DRC_Confirmation.pdf)
+
+## Design for Manufacturing (DFM) Analysis
+
+The GripRx Motor Board Gerber files were analyzed using
+JLCDFM to evaluate PCB manufacturability.
+
+The report includes checks for copper traces, pad spacing,
+solder mask, silkscreen, and drill holes.
+
+[Download JLCDFM Analysis Report (PDF)](GripRx_DFM_Analysis_Report.pdf)

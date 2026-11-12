@@ -13,13 +13,15 @@ The schematic was created in KiCad and passed the Electrical Rules Checker (ERC)
 
 ## Schematic Drawings
 
-![GripRx Motor Board - Sheet 1](GripRx_Motor_Board_Page-1.png)
+![GripRx Motor Board - Sheet 1](GripRx_Motor_Board_Page1.png)
 
-**Figure 1.** Sheet 1: Power supply, microcontroller, ribbon connector, GPIO header, and test points.
+**Figure 1.** Sheet 1: Power supply, microcontroller,
+ribbon connector, GPIO header, and test points.
 
-![GripRx Motor Board - Sheet 2](GripRx_Motor_Board_Page-2.png)
+![GripRx Motor Board - Sheet 2](GripRx_Motor_Board_Page2.png)
 
-**Figure 2.** Sheet 2: DRV8871 motor driver, DC gear motor, HOME and END limit switches, and debug circuitry.
+**Figure 2.** Sheet 2: DRV8871 motor driver, DC gear motor,
+HOME and END limit switches, and debug circuitry.
 
 ## Resources
 
